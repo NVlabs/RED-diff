@@ -1,0 +1,9 @@
+# Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved
+
+name: "FFHQ_256x256"
+root: "_data"
+split: "train"
+image_size: 256
+channels: 3
+transform: "default"
+subset: -1

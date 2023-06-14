@@ -1,0 +1,12 @@
+# Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved
+
+name: "dps"
+deg: "deno"
+awd: True
+cond_awd: False
+grad_term_weight: 0.1  #0.1 for in2_20ff, and 1.0 for sr4
+sigma_y: 0.0
+eta: 0.0
+mcg: False
+original: True
+lr: 0.25

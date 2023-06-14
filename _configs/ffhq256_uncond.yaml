@@ -1,0 +1,12 @@
+# Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved
+
+defaults:
+- dataset: ffhq256_val
+- loader: imagenet256_ddrm
+- model: ffhq256_uncond
+- classifier: none
+- dist: localhost
+- exp: default
+- diffusion: linear1000
+- algo: ddim
+- _self_

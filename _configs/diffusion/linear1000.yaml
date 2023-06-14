@@ -1,0 +1,6 @@
+# Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved
+
+beta_schedule: linear
+beta_start: 0.0001
+beta_end: 0.02
+num_diffusion_timesteps: 1000

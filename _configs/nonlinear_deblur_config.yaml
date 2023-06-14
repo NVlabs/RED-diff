@@ -1,0 +1,19 @@
+# Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved
+
+conditioning:
+  method: ps
+  params:
+    scale: 0.3
+
+data:
+  name: ffhq
+  root: ./data/samples/
+
+measurement:
+  operator:
+    name: nonlinear_blur
+    opt_yml_path: ./bkse/options/generate_blur/default.yml
+
+  noise: 
+    name: gaussian
+    sigma: 0.05

@@ -1,0 +1,17 @@
+# Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved
+
+#local machine
+root: "<root>/_exp"
+save_evolution: False
+ckpt_root: "ckpts"
+samples_root: "samples"
+overwrite: True
+num_steps: 50
+start_step: 1000
+end_step: 0
+smoke_test: 4
+logfreq: 200
+save_ori: False
+save_deg: False
+seed: 1
+name: ???

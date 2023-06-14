@@ -1,0 +1,238 @@
+# Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved
+
+prompt: "a painting of a virus monster playing guitar"
+outdir: /lustre/fsw/nvresearch/mmardani/output/results-stablediff-v1-512
+skip_grid: 'store_false'
+skip_cache: False
+skip_save: False
+skip_vis: True
+ddim_steps: 999
+plms: False
+laion400m: False
+fixed_code: False
+ddim_eta: 1.0
+n_iter: 1
+H: 256  #512  #512    #256
+W: 256  #512  #512    #256
+C: 4
+f: 8      
+n_samples: 8
+n_rows: 0
+scale: 0.0
+from_file: ./text/imagenet1000_clsidx_to_labels.txt
+config: ./configs/stable-diffusion/v1-inference.yaml
+ckpt: /lustre/fsw/nvresearch/mmardani/source/ldm/stable-diffusion-v1//sd-v1-4.ckpt
+seed: 42
+precision: "full"             #["full", "autocast"]
+indir: ./data/inpainting_examples
+alg: "varinf"                 #["varinf", "varinf-adam", "dps", "ddim"]
+task: "inp-Palette"           #["sr-LaMa", "inp-LaMa", "sr-Palette", "inp-Palette", "txt2img"]
+
+
+
+
+
+
+
+# data_root=$SHARE_DATA/imagenet-root
+# meta_root=$SHARE_DATA/imagenet-root
+# subset_txt=$SHARE_SOURCE/latent-diffusion-sampling/pgdm/misc/sr3_top1k.txt
+
+
+
+
+
+
+# #local machine
+# prompt: "a painting of a virus monster playing guitar"
+# outdir: "~/research/stable-diffusion-sampling-gitlab/outputs/inpaint-stablediff-v1-256"
+# skip_grid: 'store_false'
+# skip_cache: False
+# skip_save: False
+# skip_vis: False
+# ddim_steps: 999
+# plms: False
+# laion400m: False
+# fixed_code: False
+# ddim_eta: 1.0
+# n_iter: 1
+# H: 512    #256
+# W: 512    #256
+# C: 4
+# f: 8      #8
+# n_samples: 8
+# n_rows: 0
+# scale: 0.0
+# from_file: './text/imagenet1000_clsidx_to_labels.txt'
+# config: "./configs/stable-diffusion/v1-inference.yaml"
+# ckpt: './models/ldm/stable-diffusion-v1'
+# seed: 42
+# precision: "full"             #["full", "autocast"]
+# indir: './data/inpainting_examples'
+# alg: "varinf"                 #["varinf", "varinf-adam", "dps", "ddim"]
+# task: "inp-Palette"           #["sr-LaMa", "inp-LaMa", "sr-Palette", "inp-Palette", "txt2img"]
+
+
+
+
+
+
+    # parser = argparse.ArgumentParser()
+
+    # parser.add_argument(
+    #     "--prompt",
+    #     type=str,
+    #     nargs="?",
+    #     default="a painting of a virus monster playing guitar",
+    #     help="the prompt to render"
+    # )
+    # parser.add_argument(
+    #     "--outdir",
+    #     type=str,
+    #     nargs="?",
+    #     help="dir to write results to",
+    #     default="/lustre/fsw/nvresearch/mmardani/source/outputs/inpaint-stablediff-v1-256",
+    # )
+    # parser.add_argument(
+    #     "--skip_grid",
+    #     action='store_false',
+    #     help="do not save a grid, only individual samples. Helpful when evaluating lots of samples",
+    # )
+    # parser.add_argument(
+    #     "--skip_save",
+    #     action='store_true',
+    #     help="do not save individual samples. For speed measurements.",
+    # )
+    # parser.add_argument(
+    #     "--skip_vis",
+    #     action='store_false',    #store_false
+    #     help="do not visualize individual samples. For speed measurements.",
+    # )
+    # parser.add_argument(
+    #     "--ddim_steps",
+    #     type=int,
+    #     default=999,
+    #     help="number of ddim sampling steps",
+    # )
+    # parser.add_argument(
+    #     "--plms",
+    #     action='store_true',
+    #     help="use plms sampling",
+    # )
+    # parser.add_argument(
+    #     "--laion400m",
+    #     action='store_true',
+    #     help="uses the LAION400M model",
+    # )
+    # parser.add_argument(
+    #     "--fixed_code",
+    #     action='store_true',   #true
+    #     help="if enabled, uses the same random starting code across samples, otherwise it uses the input",
+    # )
+    # parser.add_argument(
+    #     "--ddim_eta",
+    #     type=float,
+    #     default=1.0,
+    #     help="ddim eta (eta=0.0 corresponds to deterministic sampling",
+    # )
+    # parser.add_argument(
+    #     "--n_iter",
+    #     type=int,
+    #     default=1,
+    #     help="sample this often",
+    # )
+    # parser.add_argument(
+    #     "--H",
+    #     type=int,
+    #     default=256,
+    #     help="image height, in pixel space",
+    # )
+    # parser.add_argument(
+    #     "--W",
+    #     type=int,
+    #     default=256,
+    #     help="image width, in pixel space",
+    # )
+    # parser.add_argument(
+    #     "--C",
+    #     type=int,
+    #     default=4,
+    #     help="latent channels",
+    # )
+    # parser.add_argument(
+    #     "--f",
+    #     type=int,
+    #     default=4,
+    #     help="downsampling factor",
+    # )
+    # parser.add_argument(
+    #     "--n_samples",
+    #     type=int,
+    #     default=8,
+    #     help="how many samples to produce for each given prompt. A.k.a. batch size",
+    # )
+    # parser.add_argument(
+    #     "--n_rows",
+    #     type=int,
+    #     default=0,
+    #     help="rows in the grid (default: n_samples)",
+    # )
+    # parser.add_argument(
+    #     "--scale",
+    #     type=float,
+    #     default=0.0,
+    #     help="unconditional guidance scale: eps = eps(x, empty) + scale * (eps(x, cond) - eps(x, empty))",
+    # )
+    # parser.add_argument(
+    #     "--from-file",
+    #     type=str,
+    #     default='./text/imagenet1000_clsidx_to_labels.txt',
+    #     help="if specified, load prompts from this file",
+    # )
+    # parser.add_argument(
+    #     "--config",
+    #     type=str,
+    #     default="./configs/stable-diffusion/v1-inference.yaml",
+    #     help="path to config which constructs model",
+    # )
+    # parser.add_argument(
+    #     "--ckpt",
+    #     type=str,
+    #     help="path to checkpoint of model",
+    #     default='/lustre/fsw/nvresearch/mmardani/source/ldm/stable-diffusion-v1/sd-v1-4.ckpt',  #"./models/ldm/stable-diffusion-v1/model.ckpt",
+    # )
+    # parser.add_argument(
+    #     "--seed",
+    #     type=int,
+    #     default=42,
+    #     help="the seed (for reproducible sampling)",
+    # )
+    # parser.add_argument(
+    #     "--precision",
+    #     type=str,
+    #     help="evaluate at this precision",
+    #     choices=["full", "autocast"],
+    #     default="full",
+    # )
+    # parser.add_argument(
+    #     "--indir",
+    #     type=str,
+    #     nargs="?",
+    #     help="dir containing image-mask pairs (`example.png` and `example_mask.png`)",
+    #     default='./data/inpainting_examples',
+    # )
+    # parser.add_argument(
+    #     "--alg",
+    #     type=str,
+    #     help="algorithm",
+    #     choices=["varinf", "varinf-adam", "dps", "ddim"],
+    #     default="varinf",
+    # )
+    # parser.add_argument(
+    #     "--task",
+    #     type=str,
+    #     help="task",
+    #     choices=["sr-LaMa", "inp-LaMa", "sr-Palette", "inp-Palette", "txt2img"],
+    #     default="inp-Palette",
+    # )
+    # opt = parser.parse_args()

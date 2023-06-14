@@ -1,0 +1,13 @@
+# Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved
+
+name: "sds_var"
+deg: "deno"
+awd: True
+cond_awd: False
+obs_weight: 0.0
+grad_term_weight: 1.0
+denoise_term_weight: "linear"    #"linear", "sqrt", "log", "square", "trunc_linear", "const", "power2over3"
+sigma_y: 0.0
+eta: 0.0
+lr: 0.1
+sigma_x0: 0.0

@@ -1,0 +1,7 @@
+# Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved
+
+batch_size: 256
+num_workers: 8
+shuffle: False
+drop_last: False
+pin_memory: True

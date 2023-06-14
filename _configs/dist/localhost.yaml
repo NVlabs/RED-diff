@@ -1,0 +1,8 @@
+# Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved
+
+port: "12345"
+master_address: "localhost"
+node_rank: 0
+num_proc_node: 1
+num_processes_per_node: 1
+backend: "gloo"   #"nccl"

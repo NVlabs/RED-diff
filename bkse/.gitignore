@@ -1,0 +1,10 @@
+*.pyc
+*.swp
+*.png
+*.jpg
+!imgs/*
+!imgs/**
+experiments/pretrained/*
+!experiments/pretrained/kernel.pth
+results/*
+datasets/*

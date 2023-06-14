@@ -1,0 +1,7 @@
+# Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved
+
+name: "mcg"
+deg: "in2_box"
+grad_term_weight: 1
+sigma_y: 0.0
+eta: 0.0

@@ -1,0 +1,23 @@
+# Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved
+
+_target_: models.guided_diffusion.script_util.create_model
+in_channels: 3
+out_channels: 3
+num_channels: 256
+num_heads: 4
+num_res_blocks: 2
+attention_resolutions: "32,16,8"
+dropout: 0.0
+resamp_with_conv: True
+learn_sigma: True
+use_scale_shift_norm: true
+use_fp16: true
+resblock_updown: true
+num_heads_upsample: -1
+var_type: 'fixedsmall'
+num_head_channels: 64
+image_size: 256
+class_cond: True
+use_checkpoint: true
+use_new_attention_order: false
+ckpt: "imagenet_256_cond"

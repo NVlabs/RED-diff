@@ -1,0 +1,15 @@
+# Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved
+
+defaults:
+- dist: localhost
+- dataset@dataset1: imagenet256_val
+- dataset@dataset2: imagenet256_val
+- loader: imagenet256_inception
+- exp: fid_stats
+- _self_
+
+fid:
+  mode: "legacy_pytorch"
+
+results: ???
+save_path: ???

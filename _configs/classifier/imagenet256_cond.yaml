@@ -1,0 +1,13 @@
+# Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved
+
+_target_: models.guided_diffusion.script_util.create_classifier
+image_size: 256
+classifier_attention_resolutions: "32,16,8"
+classifier_depth: 2
+classifier_pool: "attention"
+classifier_resblock_updown: True
+classifier_width: 128
+classifier_use_scale_shift_norm: True
+classifier_scale: 1.0
+classifier_use_fp16: True
+ckpt: "imagenet_256_classifier"

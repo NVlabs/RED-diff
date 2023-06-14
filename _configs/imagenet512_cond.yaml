@@ -1,0 +1,13 @@
+# Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved
+
+defaults:
+- stablediff: params
+- dataset: imagenet512_val
+- loader: imagenet512_ddrmpp
+- model: imagenet512_cond
+- classifier: imagenet512_cond
+- dist: localhost
+- exp: default
+- diffusion: linear1000
+- algo: ddim
+- _self_

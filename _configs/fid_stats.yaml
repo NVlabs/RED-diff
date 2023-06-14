@@ -1,0 +1,17 @@
+# Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved
+
+defaults:
+- dist: localhost
+- dataset: imagenet256_val
+- loader: imagenet256_ddrmpp
+- exp: fid_stats
+- _self_
+
+fid:
+  mode: "legacy_pytorch"
+
+dataset:
+  transform: "identity"
+
+save_path: 'none'
+mean_std_stats: False
